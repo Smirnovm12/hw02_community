@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import  Group, Post
+from .models import Group, Post
+
 
 # Register your models here.
 
@@ -10,13 +11,12 @@ class PostAdmin(admin.ModelAdmin):
     # Указываем поля, которые будут отображаться в Админке
     list_display = ("pk", "text", "pub_date", "author")
 
-# Добавляем интерфейс для поиска данных
+    # Добавляем интерфейс для поиска данных
     search_fields = ("text",)
-# Добавляем возможность фильтрации по дате
+    # Добавляем возможность фильтрации по дате
     list_filter = ("pub_date",)
-# это свойство сработает для всех колонок: где пусто - там будет эта строка
+    # это свойство сработает для всех колонок: где пусто - там будет эта строка
     empty_value_display = "-пусто-"
-
 
 
 @admin.register(Group)

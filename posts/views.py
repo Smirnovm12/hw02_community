@@ -10,6 +10,7 @@ def index(request):
         output.append(item.text)
     return HttpResponse('\n'.join(output))
 
+
 def group_posts(request, slug):
     # функция get_object_or_404 получает по заданным критериям объект из базы данных 
     # или возвращает сообщение об ошибке, если объект не найден
